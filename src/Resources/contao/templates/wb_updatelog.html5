@@ -1,0 +1,75 @@
+	<div id="update-log">
+		<div class="inside">
+			<h2>Updates der Website</h2>
+			<div class="box">
+				<h3>Geplante Änderungen</h3>
+				<ul>
+					<?php $data = $this->data; ?>
+					<?php if($data[1]) : ?>
+						<?php foreach ($data[1] as $elem) : ?>
+								<?php if($elem['description']) : ?>
+									<div class="abbr">
+										<div class="invisible abbr-title"><?php echo $elem['description']; ?></div>
+								<?php endif; ?>
+								
+										<li <?php if ($elem['description']) : ?>class="pointer"<?php endif; ?>><?php echo $elem['name']; ?></li>
+										
+								<?php if($elem['description']) : ?>
+									</div>
+								<?php endif; ?>
+								
+						<?php endforeach; ?>
+					<?php else : ?>
+						<p>Keine geplanten Änderungen.</p>
+					<?php endif; ?>
+				</ul>
+			</div>
+			<div class="box">
+				<h3>Laufende Änderungen</h3>
+				<ul>
+					<?php if($data[2]) : ?>
+						<?php foreach ($data[2] as $elem) : ?>
+								<?php if($elem['description']) : ?>
+									<div class="abbr">
+										<div class="invisible abbr-title"><?php echo $elem['description']; ?></div>
+								<?php endif; ?>
+								
+										<li <?php if ($elem['description']) : ?>class="pointer"<?php endif; ?>><?php echo $elem['name']; ?></li>
+										
+								<?php if($elem['description']) : ?>
+									</div>
+								<?php endif; ?>
+						<?php endforeach; ?>
+					<?php else : ?>
+						<p>Keine laufenden Änderungen.</p>
+					<?php endif; ?>
+				</ul>
+			</div>
+			<div class="box">
+				<h3>Umgesetzte Änderungen</h3>
+				<ul>
+					<?php if($data[3]) : ?>
+						<?php foreach ($data[3] as $elem) : ?>
+								<?php if($elem['description']) : ?>
+									<div class="abbr">
+										<div class="invisible abbr-title"><?php echo $elem['description']; ?></div>
+								<?php endif; ?>
+								
+										<li <?php if ($elem['description']) : ?>class="pointer"<?php endif; ?>><?php echo $elem['name']; ?></li>
+										
+								<?php if($elem['description']) : ?>
+									</div>
+								<?php endif; ?>
+						<?php endforeach; ?>
+					<?php else : ?>
+						<p>Keine umgesetzten Änderungen</p>
+					<?php endif; ?>
+				</ul>
+			</div>
+			<p>
+				Im Update-Log veröffentlichen wir als Webteam aktuelle Planungen. 
+				Für weitere Informationen <a href="{{link_url::56}}">kontaktieren Sie uns!</a>
+			</p>
+		</div>
+	</div>
+</div>
